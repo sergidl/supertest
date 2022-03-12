@@ -1,0 +1,91 @@
+---> userController::getAllUsers
+---> usersModel::getUsers
+---> userController::getAllUsers::DONE
+---> usersController::getUserById
+---> usersModel::getUserById = 20
+---> users::getUserById = 20
+---> usersController::createUser
+---> usersModel::createUser = 11
+---> users::removeUser = 11
+{ id: 11, user: 'john', pass: 'ripper' }
+---> userController::getAllUsers
+---> usersModel::getUsers
+---> userController::getAllUsers::DONE
+---> usersController::createUser::DONE
+---> usersController::createUser
+---> usersModel::createUser = 12
+---> users::removeUser = 12
+{ id: 12, user: 'john', pass: 'ripper' }
+---> userController::getAllUsers
+---> usersModel::getUsers
+---> userController::getAllUsers::DONE
+---> usersController::createUser::DONE
+---> usersController::updateUser
+---> usersModel::updateUser = 1
+---> users::updateUser
+---> users::getUserById = 1
+---> users::removeUser = 1
+---> users::removeUser = 1
+{ id: 1, user: 'john', pass: 'ripper' }
+---> userController::getAllUsers
+---> usersModel::getUsers
+---> userController::getAllUsers::DONE
+---> usersController::updateUser:DONE
+---> usersController::updateUser
+---> usersModel::updateUser = 11
+---> users::updateUser
+---> users::getUserById = 11
+---> users::removeUser = 11
+---> users::removeUser = 11
+{ id: 11, user: 'user', pass: 'ripper' }
+---> userController::getAllUsers
+---> usersModel::getUsers
+---> userController::getAllUsers::DONE
+---> usersController::updateUser:DONE
+---> usersController::removeUser
+{ id: 1 }
+---> usersModel::removeUser = 1
+---> users::removeUser = 1
+---> userController::getAllUsers
+---> usersModel::getUsers
+---> userController::getAllUsers::DONE
+---> usersController::removeUser::DONE
+---> usersController::removeUser
+{ id: 1 }
+---> usersModel::removeUser = 1
+---> users::removeUser = 1
+---> userController::getAllUsers
+---> usersModel::getUsers
+BadRequestError: Ups! User no existe
+    at removeUser (file:///C:/Users/sergi/Documents/DAW/supertest/controllers/userController.js:42:14)
+    at Layer.handle [as handle_request] (C:\Users\sergi\Documents\DAW\supertest\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\sergi\Documents\DAW\supertest\node_modules\express\lib\router\route.js:137:13)
+    at next (C:\Users\sergi\Documents\DAW\supertest\node_modules\express\lib\router\route.js:131:14)
+    at next (C:\Users\sergi\Documents\DAW\supertest\node_modules\express\lib\router\route.js:131:14)
+    at next (C:\Users\sergi\Documents\DAW\supertest\node_modules\express\lib\router\route.js:131:14)
+    at Route.dispatch (C:\Users\sergi\Documents\DAW\supertest\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (C:\Users\sergi\Documents\DAW\supertest\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\sergi\Documents\DAW\supertest\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (C:\Users\sergi\Documents\DAW\supertest\node_modules\express\lib\router\index.js:341:12)
+BadRequestError: Ups! user no existe
+    at getUserById (file:///C:/Users/sergi/Documents/DAW/supertest/controllers/userController.js:28:14)
+    at Layer.handle [as handle_request] (C:\Users\sergi\Documents\DAW\supertest\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\sergi\Documents\DAW\supertest\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\Users\sergi\Documents\DAW\supertest\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (C:\Users\sergi\Documents\DAW\supertest\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\sergi\Documents\DAW\supertest\node_modules\express\lib\router\index.js:281:22
+    at param (C:\Users\sergi\Documents\DAW\supertest\node_modules\express\lib\router\index.js:360:14)
+    at param (C:\Users\sergi\Documents\DAW\supertest\node_modules\express\lib\router\index.js:371:14)
+    at Function.process_params (C:\Users\sergi\Documents\DAW\supertest\node_modules\express\lib\router\index.js:416:3)
+    at next (C:\Users\sergi\Documents\DAW\supertest\node_modules\express\lib\router\index.js:275:10)
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:371:5)
+    at ServerResponse.setHeader (node:_http_outgoing:576:11)
+    at ServerResponse.header (C:\Users\sergi\Documents\DAW\supertest\node_modules\express\lib\response.js:776:10)
+    at ServerResponse.send (C:\Users\sergi\Documents\DAW\supertest\node_modules\express\lib\response.js:170:12)
+    at ServerResponse.json (C:\Users\sergi\Documents\DAW\supertest\node_modules\express\lib\response.js:267:15)
+    at getAllUsers (file:///C:/Users/sergi/Documents/DAW/supertest/controllers/userController.js:9:9)
+    at removeUser (file:///C:/Users/sergi/Documents/DAW/supertest/controllers/userController.js:46:5)
+    at Layer.handle [as handle_request] (C:\Users\sergi\Documents\DAW\supertest\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\sergi\Documents\DAW\supertest\node_modules\express\lib\router\route.js:137:13)
+    at next (C:\Users\sergi\Documents\DAW\supertest\node_modules\express\lib\router\route.js:131:14)
