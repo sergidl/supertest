@@ -51,8 +51,8 @@ request(app)
 	.post('/user')
 	.send({
 		"id": 12,
-		"user": "john",
-		"pass": "ripper"
+		"user": "ricard",
+		"pass": "profe"
 	})
 	.expect('Content-Type', /json/)
 	.expect(200)
