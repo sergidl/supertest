@@ -5,7 +5,7 @@ import { ManagerFs } from '../../managers/manager-fs.js';
 class Users {
 
     constructor() {
-        this.mgfl = new ManagerFs('./users.json');
+        this.mgfl = new ManagerFs('../../users.json');
         this.users = this.mgfl.getData();
 
     }
