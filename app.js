@@ -7,7 +7,7 @@ const app = express();
 app.use(express.json());
 
 app.use((req,res,next)=>{
-    console.log('---->:app.js');
+    // console.log('---->:app.js');
     next();
 }); 
 

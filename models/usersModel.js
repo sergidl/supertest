@@ -7,7 +7,7 @@ class UsersModel {
 
     getUsers() {
 
-        console.log("---> usersModel::getUsers");
+        // console.log("---> usersModel::getUsers");
 
         const users = user.getUsers();
 
@@ -16,7 +16,7 @@ class UsersModel {
 
     getUserById(id) {
 
-        console.log(`---> usersModel::getUserById = ${id}`);
+        // console.log(`---> usersModel::getUserById = ${id}`);
 
         const _user = user.getUserById(id);
         if (typeof _user == 'undefined')
@@ -27,7 +27,7 @@ class UsersModel {
 
     removeUser(id) {
 
-        console.log(`---> usersModel::removeUser = ${id}`);
+        // console.log(`---> usersModel::removeUser = ${id}`);
 
         const index = user.removeUser(id);
         return index;
@@ -39,7 +39,7 @@ class UsersModel {
 
     createUser(req) {
 
-        console.log(`---> usersModel::createUser = ${req.id}`);
+        // console.log(`---> usersModel::createUser = ${req.id}`);
 
         const new_user = userPojo(req);
         if (typeof new_user == 'undefined')
@@ -50,7 +50,7 @@ class UsersModel {
     }
 
     updateUser(req) {
-        console.log(`---> usersModel::updateUser = ${req.id}`);
+        // console.log(`---> usersModel::updateUser = ${req.id}`);
 
         const new_user = userPojo(req);
         if (typeof new_user == 'undefined')

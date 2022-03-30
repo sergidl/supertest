@@ -6,43 +6,114 @@ const request = supertest(app)
 
 // CRUD create
 
+
+
+
+
 describe('CRUD Create : POST /user', () => {
-	describe('Given a user and password', () => {
+	describe('Given a user 11', () => {
 		// Then response status 200
 		test('Then response status 200', async () => {
-			const response = await request.post('/users/register').send({
-				username: 'pep@domini.es',
-				password: 'pam'
+			const response = await request.post('/users/').send({
+				"id": 11,
+				"user": "john",
+				"pass": "ripper"
 			})
 			expect(response.statusCode).toBe(200);
 		})
-		// Then return 'content-type' application/json
-		test("Then return 'content-type' application/json", async () => {
-			const response = await request.post('/users/register').send({
-				username: 'pep@domini.es',
-				password: 'pam'
+		// 
+	})
+	describe('Given a user 12', () => {
+		// Then response status 200
+		test('Then response status 200', async () => {
+			const response = await request.post('/users/').send({
+				"id": 12,
+				"user": "ricard",
+				"pass": "profe"
 			})
-				.expect("Content-Type", /json/);
-		})
-		// Then have username on JSON request
-		test("Then have username on JSON request", async () => {
-			const response = await request.post('/users/register').send({
-				username: 'pep@domini.es',
-				password: 'pam'
-			})
-			expect(response.body.username).toBe('lele');
+			expect(response.statusCode).toBe(200);
 		})
 		// 
-	}
-
-	)
+	})
 })
-describe('CRUD Read : GET /user', () => {
-	describe('Dado (given) un usuario y un password', () => {
-		//(then) Deberia respoder status code 200;
-		//(then) Deberia devolver el password encriptado;
-		//(then) Deberia devolver un timestamp"
-		//(then) ...   
-	}
-	)
-});
+
+describe('CRUD Create : GET /user', () => {
+	describe('Given all users', () => {
+		// Then response status 200
+		test('Then response status 200', async () => {
+			const response = await request.get('/users/')
+			expect(response.statusCode).toBe(200);
+		})
+		// 
+	})
+	describe('Given a user 20', () => {
+		// Then response status 400
+		test('Then response status 400', async () => {
+			const response = await request.get('/users/20')
+			expect(response.statusCode).toBe(400);
+		})
+		// 
+	})
+	describe('Given a user 2', () => {
+		// Then response status 200
+		test('Then response status 200', async () => {
+			const response = await request.get('/users/2')
+			expect(response.statusCode).toBe(200);
+		})
+		// 
+	})
+})
+
+
+describe('CRUD Create : PUT /user', () => {
+	describe('Given a user 1 change user', () => {
+		// Then response status 200
+		test('Then response status 200', async () => {
+			const response = await request.put('/users/').send({
+				"id": 1,
+				"user": "john",
+				"pass": "ripper"
+			})
+			expect(response.statusCode).toBe(200);
+		})
+		// 
+	})
+	describe('Given a user 11 change user', () => {
+		// Then response status 200
+		test('Then response status 200', async () => {
+			const response = await request.put('/users/').send({
+				"id": 11,
+				"user": "ricard",
+				"pass": "profe"
+			})
+			expect(response.statusCode).toBe(200)
+		})
+		// 
+	})
+})
+
+
+
+describe('CRUD Create : DELETE /user', () => {
+	describe('Given a user 1 delete it', () => {
+		// Then response status 200
+		test('Then response status 200', async () => {
+			const response = await request.delete('/users/').send({
+				"id": 1
+			})
+			expect(response.statusCode).toBe(200);
+		})
+		// 
+	})
+	describe('Given a user 11 delete it', () => {
+		// Then response status 200
+		test('Then response status 200', async () => {
+			const response = await request.delete('/users/').send({
+				"id": 11
+			})
+			expect(response.statusCode).toBe(200);
+		})
+		// 
+	})
+})
+

@@ -3,16 +3,16 @@ import usersModel from '../models/usersModel.js';
 
 const getAllUsers = (req, res) => {
 
-    console.log("---> userController::getAllUsers");
+    // console.log("---> userController::getAllUsers");
 
     const users = usersModel.getUsers();
     res.json(users);
-    console.log("---> userController::getAllUsers::DONE");
+    // console.log("---> userController::getAllUsers::DONE");
 }
 
 const getUserById = (req, res, next) => {
 
-    console.log("---> usersController::getUserById");
+    // console.log("---> usersController::getUserById");
 
     if (!req.params.id)
         next(HttpError(400, { message: 'no parameter found' }));
@@ -21,7 +21,7 @@ const getUserById = (req, res, next) => {
         const id = req.params.id;
         const user = usersModel.getUserById(id);
         res.json(user);
-        console.log("---> usersController::getUserById::DONE");
+        // console.log("---> usersController::getUserById::DONE");
 
 
     } catch (error) {
@@ -31,7 +31,7 @@ const getUserById = (req, res, next) => {
 }
 
 const removeUser = (req, res, next) => {
-    console.log("---> usersController::removeUser");
+    // console.log("---> usersController::removeUser");
     
     console.log(req.body)
     if (!req.body.id)
@@ -44,13 +44,13 @@ const removeUser = (req, res, next) => {
     }
 
     getAllUsers(req, res);
-    console.log("---> usersController::removeUser::DONE");
+    // console.log("---> usersController::removeUser::DONE");
 
 
 }
 
 const createUser = (req, res, next) => {
-    console.log(`---> usersController::createUser`);
+    // console.log(`---> usersController::createUser`);
 
     if (!req.body)
         next(HttpError(400, { message: 'Ups! parametro de entrada incorrecto' }));
@@ -59,7 +59,7 @@ const createUser = (req, res, next) => {
 
         usersModel.createUser(req.body);
         getAllUsers(req, res);
-        console.log(`---> usersController::createUser::DONE`);
+        // console.log(`---> usersController::createUser::DONE`);
 
     } catch (error) {
         next(HttpError(400, { message: error.message }));
@@ -68,7 +68,7 @@ const createUser = (req, res, next) => {
 }
 
 const updateUser = (req, res, next) => {
-    console.log(`---> usersController::updateUser`);
+    // console.log(`---> usersController::updateUser`);
 
 
     try {
@@ -77,7 +77,7 @@ const updateUser = (req, res, next) => {
 
         usersModel.updateUser(req.body);
         getAllUsers(req, res);
-        console.log(`---> usersController::updateUser:DONE`);
+        // console.log(`---> usersController::updateUser:DONE`);
 
     } catch (error) {
         next(HttpError(400, { message: error.message }));
